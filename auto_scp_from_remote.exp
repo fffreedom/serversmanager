@@ -1,0 +1,9 @@
+#!/bin/sh
+IPFile=$1
+src_file=$2
+des_dir=$3
+for i in `awk '{print $1}' "$IPFile"`
+do
+    echo "expect ./login_scp.exp $i "$src_file" "$des_dir""
+    expect ./login_scp_from_remote.exp $i "$src_file" "$des_dir"
+done

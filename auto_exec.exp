@@ -1,0 +1,8 @@
+#!/bin/sh
+IPFile="$1"
+CMD="$2"
+for i in `awk '{print $1}' "$IPFile"`
+do
+    echo "expect ./login_cmd.exp $i "$CMD""
+    expect ./login_cmd.exp  $i "$CMD"
+done

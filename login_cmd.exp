@@ -1,0 +1,8 @@
+#!/usr/bin/expect -f
+set ip [lindex $argv 0 ]
+set command [lindex $argv 1]
+spawn ssh root@$ip -i ./cs5-copermicus-blockchain-test-key.pem
+set timeout 300
+expect "*#" { send "$command\r" }
+expect "*#" { send "exit\r" }
+expect eof

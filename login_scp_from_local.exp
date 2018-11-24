@@ -3,5 +3,5 @@ set ip [lindex $argv 0]
 set src_file [lindex $argv 1] 
 set des_dir [lindex $argv 2] 
 set timeout 360
-spawn scp -i ./cs5-copermicus-blockchain-test-key.pem $src_file root@$ip:$des_dir 
+spawn scp -r -i ./cs5-copermicus-blockchain-test-key.pem $src_file root@$ip:$des_dir 
 expect eof
